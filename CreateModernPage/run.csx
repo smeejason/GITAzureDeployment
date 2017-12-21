@@ -10,7 +10,7 @@ private static readonly string ADMIN_PASSWORD_CONFIG_KEY = "SharePointAdminPassw
 
 public static async Task<HttpResponseMessage> Run(HttpRequestMessage req, TraceWriter log)
 {
-    log.Info($"C# HTTP trigger function processed a request. RequestUri={req.RequestUri}");
+    log.Info($"C# HTTP trigger function processed a request. RequestUri={req.RequestUri}" +  DateTime.Now);
 
     // collect site/page details from request body..
     dynamic data = await req.Content.ReadAsAsync<object>();
